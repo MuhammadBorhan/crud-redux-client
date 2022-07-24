@@ -8,11 +8,11 @@ const ShowItems = () => {
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(fetchPosts())
-    }, [])
+    }, [dispatch])
     return (
         <div className='px-12'>
             <h1 className='text-4xl text-purple-800 font-bold mb-2'>All Items</h1>
-            {loading && <h1>Loading...</h1>}
+            {loading && <h1 className='text-4xl font-bold text-indigo-600'>Loading...</h1>}
             {error && <h3>{error}</h3>}
             <div className='grid grid-cols-2 md:grid-cols-4'>
                 {
