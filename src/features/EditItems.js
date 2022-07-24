@@ -14,8 +14,7 @@ const EditItems = () => {
 
     const handleEdit = e => {
         e.preventDefault();
-        // const data = { title, body }
-        dispatch(updatePosts(id, title, body))
+        dispatch(updatePosts({ id, title, body }))
         navigate('/showitem', { replace: true })
     }
     return (

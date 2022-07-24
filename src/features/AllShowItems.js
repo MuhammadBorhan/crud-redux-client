@@ -16,8 +16,8 @@ const AllShowItems = ({ post }) => {
             <h3><span className='text-2xl font-bold text-green-700'>Title:</span> {title}</h3>
             <p><span className='text-xl font-bold text-indigo-700'>Body:</span> {body}</p>
             <div className='flex gap-2 justify-center p-4'>
-                <Link to='/edititem' state={{ id: _id, title, body }}><button class="btn btn-info">Edit</button></Link>
-                <button onClick={() => handleDelete(_id)} class="btn btn-error">Delete</button>
+                <Link to='/edititem' state={{ id: _id, title, body }}><button className="btn btn-info">Edit</button></Link>
+                <button onClick={() => handleDelete(_id)} className="btn btn-error">Delete</button>
             </div>
         </div>
     );

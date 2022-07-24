@@ -4,9 +4,9 @@ import { useState } from "react";
 
 
 export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
-    const res = await axios.get("http://localhost:5000/posts");
-    return res.data;
-    // return fetch('http://localhost:5000/posts').then(res => res.json())
+    // const res = await axios.get("http://localhost:5000/posts");
+    // return res.data;
+    return fetch('http://localhost:5000/posts').then(res => res.json())
 });
 
 export const createPosts = createAsyncThunk('posts/createPosts', async (posts) => {
@@ -19,13 +19,14 @@ export const createPosts = createAsyncThunk('posts/createPosts', async (posts) =
     }).then(res => res.json())
 });
 
-export const updatePosts = createAsyncThunk('posts/updatePosts', async (id, title, body) => {
+export const updatePosts = createAsyncThunk('posts/updatePosts', async (data) => {
+    const { id } = data;
     return fetch(`http://localhost:5000/posts/${id}`, {
         method: 'PUT',
         headers: {
-            'Content-type': 'application/json',
+            'content-type': 'application/json'
         },
-        body: JSON.stringify(title, body)
+        body: JSON.stringify(data)
     }).then(res => res.json())
 });
 
